@@ -10,8 +10,9 @@ public interface LoginView {
     void showProgress();
     void hideProgress();
 
-    void handleSignIn();
+    void handleLogin();
     void loginError(String error);
+    void registerError(String error);
 
     void navigateToMainScreen();
 }
