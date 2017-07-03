@@ -1,12 +1,17 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+
+repositories {
+    mavenCentral()
+}
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "26.0.0"
+    compileSdkVersion rootProject.ext.compileSDKVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
     defaultConfig {
         applicationId "com.professional.micromaster.photolibrary"
-        minSdkVersion 16
-        targetSdkVersion 25
+        minSdkVersion rootProject.ext.minSDKVersion
+        targetSdkVersion rootProject.ext.targetSDKVersion
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -15,7 +20,16 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            resValue "string", "CLOUDINARY_URL", project.property('CLOUDINARY_URL')
         }
+        debug {
+            resValue "string", "CLOUDINARY_URL", project.property('CLOUDINARY_URL')
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE-FIREBASE.txt'
+        exclude 'META-INF/NOTICE'
     }
 }
 
@@ -24,7 +38,23 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
+
+    compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+    compile "com.android.support:support-v4:$rootProject.ext.supportLibraryVersion"
+    compile "com.android.support:recyclerview-v7:$rootProject.ext.supportLibraryVersion"
+    compile "com.android.support:design:$rootProject.ext.supportLibraryVersion"
+
+    apt "com.github.Raizlabs.DBFlow:dbflow-processor:$rootProject.ext.dbflowVersion"
+    compile "com.github.Raizlabs.DBFlow:dbflow-core:$rootProject.ext.dbflowVersion"
+    compile "com.github.Raizlabs.DBFlow:dbflow:$rootProject.ext.dbflowVersion"
+
+    compile "com.google.firebase:firebase-auth:$rootProject.ext.firebaseVersion"
+    compile "com.cloudinary:cloudinary-android:$rootProject.ext.cloudinaryVersion"
+    compile "de.hdodenhof:circleimageview:$rootProject.ext.circleImageViewVersion"
+    compile "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
+    compile "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
+    compile "org.greenrobot:eventbus:$rootProject.ext.eventbusVersion"
 }
+
+apply plugin: 'com.google.gms.google-services'
