@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 
-import com.professional.micromaster.photolibrary.MainActivity;
+import com.professional.micromaster.photolibrary.main.MainActivity;
 import com.professional.micromaster.photolibrary.R;
 import com.professional.micromaster.photolibrary.login.LoginPresenter;
 import com.professional.micromaster.photolibrary.login.LoginPresenterImpl;
