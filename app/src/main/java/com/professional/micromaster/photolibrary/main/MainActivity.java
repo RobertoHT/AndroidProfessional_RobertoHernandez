@@ -13,13 +13,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
-import android.widget.FrameLayout;
-import android.widget.RelativeLayout;
 
 import com.professional.micromaster.photolibrary.R;
 import com.professional.micromaster.photolibrary.fragments.GalleryFragment;
 import com.professional.micromaster.photolibrary.fragments.InspectFragment;
-import com.professional.micromaster.photolibrary.fragments.MainScreenFragment;
+import com.professional.micromaster.photolibrary.fragments.main.ui.MainScreenFragment;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
