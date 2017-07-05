@@ -11,7 +11,10 @@ public interface MainScreenView {
     void hideProgress();
     void showUIElements();
     void hideUIElements();
+    void showMessage();
+    void hideMessage();
 
     void setPhoto(Photo photo);
     void sharePhoto();
+    void onGetImageError(String error);
 }

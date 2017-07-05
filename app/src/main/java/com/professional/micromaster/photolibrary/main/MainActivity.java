@@ -25,8 +25,6 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     @Bind(R.id.toolbar)
     Toolbar toolbar;
-    @Bind(R.id.btnFloatShare)
-    FloatingActionButton btnFloatShare;
     @Bind(R.id.nav_view)
     NavigationView navView;
     @Bind(R.id.drawer_layout)

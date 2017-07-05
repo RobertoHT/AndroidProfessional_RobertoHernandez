@@ -17,6 +17,6 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mainFragmen_msg_no_photo">No Photos to display</string>
+    <string name="mainFragmen_msg_error">Impossible to get information: %s</string>
 </resources>
