@@ -52,6 +52,7 @@ public class MainScreenFragment extends Fragment implements MainScreenView {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main_screen, container, false);
         ButterKnife.bind(this, view);
+        setupImageLoader();
         presenter.getLastPhoto();
         return view;
     }
@@ -59,7 +60,6 @@ public class MainScreenFragment extends Fragment implements MainScreenView {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setupImageLoader();
         presenter = new MainScreenPresenterImpl(this);
         presenter.onCreate();
     }
@@ -71,7 +71,7 @@ public class MainScreenFragment extends Fragment implements MainScreenView {
     }
 
     private void setupImageLoader() {
-        imageLoader = new GlideImageLoader();
+        imageLoader = new GlideImageLoader(getActivity());
         RequestListener glideRequestListener = new RequestListener() {
             @Override
             public boolean onException(Exception e, Object model, Target target, boolean isFirstResource) {
@@ -139,7 +139,6 @@ public class MainScreenFragment extends Fragment implements MainScreenView {
     }
 
     private void setInputs(int VISIBILITY) {
-        imgPhoto.setVisibility(VISIBILITY);
         titlePhoto.setVisibility(VISIBILITY);
         btnShare.setVisibility(VISIBILITY);
     }
