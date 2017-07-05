@@ -6,6 +6,11 @@
     <string name="login.error.message.signin">Unable to login %s</string>
     <string name="login.error.message.signup">Unable to register %s</string>
 
+    <string name="main.message.picture.source">Select a photo</string>
+    <string name="main.notice.upload.init">Photo is being processed</string>
+    <string name="main.notice.upload.complete">Photo was successfully posted</string>
+    <string name="main.error.dispatch.camera">Error creating file</string>
+
     <string name="nav_main">Main Screen</string>
     <string name="nav_camera">Camera</string>
     <string name="nav_gallery">My Gallery</string>
