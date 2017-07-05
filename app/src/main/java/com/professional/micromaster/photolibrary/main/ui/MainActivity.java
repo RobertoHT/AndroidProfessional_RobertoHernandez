@@ -1,8 +1,7 @@
-package com.professional.micromaster.photolibrary.main;
+package com.professional.micromaster.photolibrary.main.ui;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
