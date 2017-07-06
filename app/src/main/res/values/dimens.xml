@@ -7,4 +7,5 @@
     <dimen name="nav_header_height">160dp</dimen>
 
     <dimen name="main_fragment_image_size">350dp</dimen>
+    <dimen name="photo_list_image_size">150dp</dimen>
 </resources>

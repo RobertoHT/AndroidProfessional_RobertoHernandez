@@ -27,7 +27,7 @@ import android.view.MenuItem;
 import android.widget.RelativeLayout;
 
 import com.professional.micromaster.photolibrary.R;
-import com.professional.micromaster.photolibrary.fragments.GalleryFragment;
+import com.professional.micromaster.photolibrary.fragments.gallery.ui.GalleryFragment;
 import com.professional.micromaster.photolibrary.fragments.InspectFragment;
 import com.professional.micromaster.photolibrary.fragments.main.ui.MainScreenFragment;
 import com.professional.micromaster.photolibrary.main.MainPresenter;

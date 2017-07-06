@@ -1,4 +1,4 @@
-package com.professional.micromaster.photolibrary.fragments;
+package com.professional.micromaster.photolibrary.fragments.gallery.ui;
 
 
 import android.os.Bundle;
