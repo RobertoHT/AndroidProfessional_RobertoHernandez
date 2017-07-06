@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.professional.micromaster.photolibrary.PhotoLibraryApp;
 import com.professional.micromaster.photolibrary.R;
 import com.professional.micromaster.photolibrary.entities.Photo;
 import com.professional.micromaster.photolibrary.fragments.gallery.GalleryPresenter;
@@ -67,7 +66,6 @@ public class GalleryFragment extends Fragment implements GalleryView, OnItemClic
     }
 
     private void setupAdapter() {
-        PhotoLibraryApp app = (PhotoLibraryApp) getActivity().getApplication();
         adapter = new PhotosAdapter(new ArrayList<Photo>(), new GlideImageLoader(getActivity()), this);
     }
 
@@ -91,6 +89,10 @@ public class GalleryFragment extends Fragment implements GalleryView, OnItemClic
 
     @Override
     public void onItemClick(Photo photo) {
-        startActivity(new Intent(getActivity(), GalleryDetailActivity.class));
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(Photo.KEY_PHOTO, photo);
+        Intent intent = new Intent(getActivity(), GalleryDetailActivity.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 }
