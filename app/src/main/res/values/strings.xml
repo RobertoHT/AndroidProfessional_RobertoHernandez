@@ -24,4 +24,9 @@
 
     <string name="mainFragmen_msg_no_photo">No Photos to display</string>
     <string name="mainFragmen_msg_error">Impossible to get information: %s</string>
+
+    <string name="mainInspect_message_title">Enter tags separated with commas to search:</string>
+    <string name="mainInspect_message_hint">Tags to search</string>
+    <string name="mainInspect_message_button">SEARCH</string>
+    <string name="mainInspect_error_message">Please enter at least one tag</string>
 </resources>

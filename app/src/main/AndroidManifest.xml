@@ -15,7 +15,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <meta-data
             android:name="CLOUDINARY_URL"
             android:value="@string/CLOUDINARY_URL" />
@@ -30,8 +29,8 @@
         <activity
             android:name=".main.ui.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".fragments.gallery.ui.GalleryDetailActivity" />
+        <activity android:name=".fragments.gallery.ui.GalleryDetailActivity" />
+        <activity android:name=".fragments.inspect.SearchActivity" />
     </application>
 
 </manifest>

@@ -10,4 +10,5 @@
     <dimen name="photo_list_image_size">150dp</dimen>
     <dimen name="gallery_fragment_horizontal_margin">10dp</dimen>
     <dimen name="gallery_fragment_vertical_margin">4dp</dimen>
+    <dimen name="inspect_fragment_search_width">300dp</dimen>
 </resources>
