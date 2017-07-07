@@ -10,7 +10,7 @@ public interface SearchView {
     public static final int SWIPE_RIGHT = 0;
     public static final int SWIPE_LEFT = 1;
     public static final int SWIPE_UP = 2;
-    public static final int SWIPE_BOTTOM = 3;
+    public static final int SWIPE_DOWN = 3;
 
     void showProgress();
     void hideProgress();
@@ -19,7 +19,7 @@ public interface SearchView {
     void leftAnimation();
     void rightAnimation();
     void upAnimation();
-    void bottomAnimation();
+    void downAnimation();
 
     void onPhotoSaved();
 

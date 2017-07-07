@@ -29,4 +29,6 @@
     <string name="mainInspect_message_hint">Tags to search</string>
     <string name="mainInspect_message_button">SEARCH</string>
     <string name="mainInspect_error_message">Please enter at least one tag</string>
+
+    <string name="search_notice_saved">Saved successfully</string>
 </resources>

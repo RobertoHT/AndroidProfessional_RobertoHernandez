@@ -8,6 +8,8 @@ import com.professional.micromaster.photolibrary.fragments.inspect.event.Inspect
 import com.professional.micromaster.photolibrary.lib.GreenRobotEventBus;
 import com.professional.micromaster.photolibrary.lib.base.EventBus;
 
+import java.util.Random;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -17,6 +19,7 @@ import retrofit2.Response;
  */
 
 public class SearchRepositoryImpl implements SearchRepository {
+    private final static int PHOTO_SIZE = 20;
     private EventBus eventBus;
 
     public SearchRepositoryImpl() {
@@ -28,15 +31,16 @@ public class SearchRepositoryImpl implements SearchRepository {
         ImageClient client = new ImageClient();
         ImageService service = client.getFlickrService();
 
-        Call<PhotoSearchResponse> call = service.search(tags, SearchRepository.PHOTO_SIZE);
+        Call<PhotoSearchResponse> call = service.search(tags, PHOTO_SIZE);
         call.enqueue(new Callback<PhotoSearchResponse>() {
             @Override
             public void onResponse(Call<PhotoSearchResponse> call, Response<PhotoSearchResponse> response) {
                 if (response.isSuccess()) {
                     PhotoSearchResponse searchResponse = response.body();
                     Photo photo = new Photo();
-                    photo.setPhotoUrl(searchResponse.getPhotos().getPhoto().get(0).getFlickrUrl());
-                    photo.setPhotoTitle(searchResponse.getPhotos().getPhoto().get(0).getTitle());
+                    int random = new Random().nextInt(PHOTO_SIZE);
+                    photo.setPhotoUrl(searchResponse.getPhotos().getPhoto().get(random).getFlickrUrl());
+                    photo.setPhotoTitle(searchResponse.getPhotos().getPhoto().get(random).getTitle());
                     post(photo);
                 } else {
                     post(response.message());

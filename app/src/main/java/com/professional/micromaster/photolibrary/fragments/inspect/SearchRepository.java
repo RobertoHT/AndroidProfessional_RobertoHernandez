@@ -7,8 +7,6 @@ import com.professional.micromaster.photolibrary.entities.Photo;
  */
 
 public interface SearchRepository {
-    public final static int PHOTO_SIZE = 10;
-
     void getNextPhoto(String tags);
     void savePhoto(Photo photo);
 }

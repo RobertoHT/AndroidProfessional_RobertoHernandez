@@ -68,8 +68,8 @@ public class SearchPresenterImpl implements SearchPresenter {
             if (swipe == SearchView.SWIPE_UP) {
                 view.upAnimation();
             }
-            else if (swipe == SearchView.SWIPE_BOTTOM) {
-                view.bottomAnimation();
+            else if (swipe == SearchView.SWIPE_DOWN) {
+                view.downAnimation();
             }
         }
         getNextPhoto(tags);
