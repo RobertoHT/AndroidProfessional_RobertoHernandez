@@ -43,7 +43,7 @@ public class ImageClient {
                 .build();
     }
 
-    ImageService getFlickrService() {
+    public ImageService getFlickrService() {
         return retrofit.create(ImageService.class);
     }
 }

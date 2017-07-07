@@ -5,5 +5,5 @@ package com.professional.micromaster.photolibrary.fragments.inspect;
  */
 
 public interface GetNextPhotoInteractor {
-    void execute();
+    void execute(String tags);
 }

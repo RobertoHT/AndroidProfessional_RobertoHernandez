@@ -7,13 +7,13 @@ import com.professional.micromaster.photolibrary.fragments.inspect.event.Inspect
  * Created by Roberto on 07/07/17.
  */
 
-public interface InspectPresenter {
+public interface SearchPresenter {
     void onCreate();
     void onDestroy();
 
-    void dismissPhoto();
-    void getNextPhoto();
-    void savePhoto(Photo photo);
+    void getNextPhoto(String tags);
+    void savePhoto(Photo photo, int swipe);
+    void dismissPhoto(int swipe);
     void imageReady();
     void imageError(String error);
 

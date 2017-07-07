@@ -7,4 +7,8 @@ package com.professional.micromaster.photolibrary.entities.service;
 public class PhotoSearchResponse {
     private Photos photos;
     private String stat;
+
+    public Photos getPhotos() {
+        return photos;
+    }
 }

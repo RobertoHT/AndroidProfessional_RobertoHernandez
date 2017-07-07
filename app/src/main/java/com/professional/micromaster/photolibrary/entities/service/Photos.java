@@ -1,7 +1,5 @@
 package com.professional.micromaster.photolibrary.entities.service;
 
-import com.professional.micromaster.photolibrary.entities.Photo;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,4 +13,8 @@ public class Photos {
     private int perPage;
     private long total;
     private List<Photo> photo = new ArrayList<>();
+
+    public List<Photo> getPhoto() {
+        return photo;
+    }
 }

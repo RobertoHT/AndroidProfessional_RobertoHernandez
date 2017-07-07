@@ -11,6 +11,10 @@ public class Photo {
     private String secret;
     private int farm;
 
+    public String getTitle() {
+        return title;
+    }
+
     public String getFlickrUrl() {
         return "https://farm" + farm + ".staticflickr.com/" + server + "/" + id + "_" + secret + "_b.jpg";
     }
