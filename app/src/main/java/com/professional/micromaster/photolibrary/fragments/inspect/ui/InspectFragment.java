@@ -1,4 +1,4 @@
-package com.professional.micromaster.photolibrary.fragments.inspect;
+package com.professional.micromaster.photolibrary.fragments.inspect.ui;
 
 
 import android.content.Intent;

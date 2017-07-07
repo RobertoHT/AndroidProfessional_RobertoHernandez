@@ -28,7 +28,7 @@ import android.widget.RelativeLayout;
 
 import com.professional.micromaster.photolibrary.R;
 import com.professional.micromaster.photolibrary.fragments.gallery.ui.GalleryFragment;
-import com.professional.micromaster.photolibrary.fragments.inspect.InspectFragment;
+import com.professional.micromaster.photolibrary.fragments.inspect.ui.InspectFragment;
 import com.professional.micromaster.photolibrary.fragments.main.ui.MainScreenFragment;
 import com.professional.micromaster.photolibrary.main.MainPresenter;
 import com.professional.micromaster.photolibrary.main.MainPresenterImpl;

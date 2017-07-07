@@ -30,7 +30,7 @@
             android:name=".main.ui.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".fragments.gallery.ui.GalleryDetailActivity" />
-        <activity android:name=".fragments.inspect.SearchActivity" />
+        <activity android:name=".fragments.inspect.ui.SearchActivity" />
     </application>
 
 </manifest>
