@@ -3,8 +3,9 @@ package com.professional.micromaster.photolibrary.fragments.inspect.ui;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -133,22 +134,49 @@ public class SearchActivity extends AppCompatActivity implements SearchView, Swi
 
     @Override
     public void leftAnimation() {
-
+        Animation anim = AnimationUtils.loadAnimation(this, R.anim.left_animation);
+        anim.setAnimationListener(getAnimationListener());
+        imgPhoto.startAnimation(anim);
     }
 
     @Override
     public void rightAnimation() {
-
+        Animation anim = AnimationUtils.loadAnimation(this, R.anim.right_animation);
+        anim.setAnimationListener(getAnimationListener());
+        imgPhoto.startAnimation(anim);
     }
 
     @Override
     public void upAnimation() {
-
+        Animation anim = AnimationUtils.loadAnimation(this, R.anim.up_animation);
+        anim.setAnimationListener(getAnimationListener());
+        imgPhoto.startAnimation(anim);
     }
 
     @Override
     public void downAnimation() {
+        Animation anim = AnimationUtils.loadAnimation(this, R.anim.down_animation);
+        anim.setAnimationListener(getAnimationListener());
+        imgPhoto.startAnimation(anim);
+    }
 
+    private Animation.AnimationListener getAnimationListener() {
+        return new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {}
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                clearImage();
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {}
+        };
+    }
+
+    private void clearImage() {
+        imgPhoto.setImageResource(0);
     }
 
     @Override

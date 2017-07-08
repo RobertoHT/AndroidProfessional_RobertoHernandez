@@ -26,10 +26,12 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.widget.RelativeLayout;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.professional.micromaster.photolibrary.R;
 import com.professional.micromaster.photolibrary.fragments.gallery.ui.GalleryFragment;
 import com.professional.micromaster.photolibrary.fragments.inspect.ui.InspectFragment;
 import com.professional.micromaster.photolibrary.fragments.main.ui.MainScreenFragment;
+import com.professional.micromaster.photolibrary.login.ui.LoginActivity;
 import com.professional.micromaster.photolibrary.main.MainPresenter;
 import com.professional.micromaster.photolibrary.main.MainPresenterImpl;
 
@@ -171,7 +173,12 @@ public class MainActivity extends AppCompatActivity implements MainView, Navigat
 
     @Override
     public void logoutClick() {
-        Log.d("NAV", "Logout");
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(this, LoginActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+                | Intent.FLAG_ACTIVITY_NEW_TASK
+                | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
     }
 
     @Override
