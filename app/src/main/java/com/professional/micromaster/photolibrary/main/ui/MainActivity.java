@@ -322,8 +322,9 @@ public class MainActivity extends AppCompatActivity implements MainView, Navigat
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode) {
             case PERMISSIONS_REQUEST_READ_MEDIA:
-                if ((grantResults.length > 0) && (grantResults[0] == PackageManager.PERMISSION_GRANTED))
+                if ((grantResults.length > 0) && (grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
                     takePicture();
+                }
                 break;
             default:
                 super.onRequestPermissionsResult(requestCode, permissions, grantResults);
