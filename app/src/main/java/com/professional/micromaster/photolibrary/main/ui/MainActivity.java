@@ -24,13 +24,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.professional.micromaster.photolibrary.R;
+import com.professional.micromaster.photolibrary.domain.AvatarHelper;
 import com.professional.micromaster.photolibrary.fragments.gallery.ui.GalleryFragment;
 import com.professional.micromaster.photolibrary.fragments.inspect.ui.InspectFragment;
 import com.professional.micromaster.photolibrary.fragments.main.ui.MainScreenFragment;
+import com.professional.micromaster.photolibrary.lib.GlideImageLoader;
+import com.professional.micromaster.photolibrary.lib.base.ImageLoader;
 import com.professional.micromaster.photolibrary.login.ui.LoginActivity;
 import com.professional.micromaster.photolibrary.main.MainPresenter;
 import com.professional.micromaster.photolibrary.main.MainPresenterImpl;
@@ -48,6 +54,7 @@ import java.util.Locale;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity implements MainView, NavigationView.OnNavigationItemSelectedListener {
     @Bind(R.id.toolbar)
@@ -83,8 +90,28 @@ public class MainActivity extends AppCompatActivity implements MainView, Navigat
         drawerLayout.setDrawerListener(toggle);
         toggle.syncState();
 
+        loadNavHeader();
+
         navView.setNavigationItemSelectedListener(this);
         showFragment(MainScreenFragment.class, 0);
+    }
+
+    private void loadNavHeader() {
+        View navHeader = navView.getHeaderView(0);
+        TextView txtEmailUser = (TextView) navHeader.findViewById(R.id.txtEmailUser);
+        CircleImageView imgPhotoUser = (CircleImageView) navHeader.findViewById(R.id.imgPhotoUser);
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String email = null;
+        if (user != null) {
+            email = user.getEmail();
+            txtEmailUser.setText(user.getEmail());
+        }
+
+        ImageLoader imageLoader = new GlideImageLoader(this);
+        if (email != null) {
+            imageLoader.load(imgPhotoUser, AvatarHelper.getAvatarUrl(email));
+        }
     }
 
     @Override
