@@ -58,9 +58,10 @@ dependencies {
     compile "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
     compile "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
     compile "org.greenrobot:eventbus:$rootProject.ext.eventbusVersion"
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.android.support:support-v4:25.3.1'
-    testCompile 'junit:junit:4.12'
+
+    testCompile "org.robolectric:robolectric:$rootProject.ext.robolectricVersion"
+    testCompile "org.mockito:mockito-all:$rootProject.ext.mockitoVersion"
+    testCompile "junit:junit:$rootProject.ext.junitVersion"
 }
 
 apply plugin: 'com.google.gms.google-services'
