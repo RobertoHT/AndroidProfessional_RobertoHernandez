@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "510368731891",
+    "firebase_url": "https://photo-library-119f8.firebaseio.com",
+    "project_id": "photo-library-119f8",
+    "storage_bucket": "photo-library-119f8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:510368731891:android:9885f2b0df3034a9",
+        "android_client_info": {
+          "package_name": "com.professional.micromaster.photolibrary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "510368731891-kv1bra9nf16mnt58apan5aik0jgl01vq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.professional.micromaster.photolibrary",
+            "certificate_hash": "19c8e47b37571b9fa2bcf65cdf76b5eaf6331d2f"
+          }
+        },
+        {
+          "client_id": "510368731891-caekblp7i4uei7uu78arcumogno102ui.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUEE8uIcLk8AWQNgwwBqyoYIHPkkv2HRw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "510368731891-caekblp7i4uei7uu78arcumogno102ui.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
